@@ -1,0 +1,32 @@
+{
+  "name": "@juansync7/iso-lettering",
+  "version": "1.0.0",
+  "description": "ISO 3098 type B engineering lettering: an OpenType font, and the characters as pen strokes for canvases and plotters",
+  "keywords": ["iso 3098", "lettering", "font", "technical drawing", "engineering drawing", "cad", "plotter"],
+  "license": "OFL-1.1",
+  "author": "Juan Kok (https://juansync.dev)",
+  "homepage": "https://github.com/JuanSync7/frontend-kit/tree/main/iso-lettering#readme",
+  "repository": { "type": "git", "url": "git+https://github.com/JuanSync7/frontend-kit.git", "directory": "iso-lettering" },
+  "bugs": { "url": "https://github.com/JuanSync7/frontend-kit/issues/new?template=iso-lettering.yml" },
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": { "types": "./dist/index.d.ts", "import": "./dist/index.js" },
+    "./iso-lettering-b.otf": "./fonts/iso-lettering-b.otf"
+  },
+  "files": ["dist", "fonts", "OFL.txt", "README.md"],
+  "sideEffects": false,
+  "scripts": {
+    "build": "esbuild src/index.ts --bundle --format=esm --outfile=dist/index.js && tsc -p .",
+    "font": "tsx scripts/build.mjs",
+    "check": "tsx scripts/build.mjs --check",
+    "prepublishOnly": "npm run build && npm run check"
+  },
+  "devDependencies": {
+    "esbuild": "^0.24.0",
+    "opentype.js": "^1.3.4",
+    "tsx": "^4.19.0",
+    "typescript": "~5.5.3"
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "name": "@juansync7/blueprint",
+  "version": "0.1.0",
+  "description": "Blueprints for web components and pages: name every part, how it sizes and the design token behind each size, measure it as it renders, and draw it",
+  "keywords": ["design system", "design tokens", "blueprint", "layout", "css", "measure", "documentation"],
+  "license": "MIT",
+  "author": "Juan Kok (https://juansync.dev)",
+  "homepage": "https://github.com/JuanSync7/frontend-kit/tree/main/blueprint#readme",
+  "repository": { "type": "git", "url": "git+https://github.com/JuanSync7/frontend-kit.git", "directory": "blueprint" },
+  "bugs": { "url": "https://github.com/JuanSync7/frontend-kit/issues/new?template=blueprint.yml" },
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": { ".": { "types": "./dist/index.d.ts", "import": "./dist/index.js" } },
+  "files": ["dist", "LICENSE", "README.md"],
+  "sideEffects": false,
+  "scripts": {
+    "build": "esbuild src/index.ts --bundle --format=esm --outfile=dist/index.js && tsc -p .",
+    "check": "tsc -p . --noEmit --emitDeclarationOnly false",
+    "prepublishOnly": "npm run build && npm run check"
+  },
+  "devDependencies": {
+    "esbuild": "^0.24.0",
+    "typescript": "~5.5.3"
+  }
+}

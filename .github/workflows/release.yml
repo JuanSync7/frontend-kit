@@ -1,0 +1,23 @@
+# Publishes one package to npm when a tag <package>@<version> is pushed, e.g. iso-lettering@1.0.0.
+# Needs the repository secret NPM_TOKEN (an npm automation token).
+name: release
+on:
+  push:
+    tags: ['*@*']
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          registry-url: https://registry.npmjs.org
+      - run: npm ci
+      - name: Publish the tagged package
+        run: npm publish --workspace "${GITHUB_REF_NAME%@*}" --access public --provenance
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
