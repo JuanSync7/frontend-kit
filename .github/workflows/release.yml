@@ -1,6 +1,8 @@
 # Publishes one package to npm. Run it from the Actions tab: release -> Run workflow -> pick the
 # package. It publishes the version in that package's package.json, then tags the commit
-# <package>@<version>. Needs the repository secret NPM_TOKEN (an npm automation token).
+# <package>@<version>. It signs in with npm Trusted Publishing (no token): each package's settings
+# on npmjs.com name this repository and release.yml as its trusted publisher. A package's very first
+# version cannot be published this way; see README.md, "Releasing".
 name: release
 on:
   workflow_dispatch:
@@ -24,13 +26,13 @@ jobs:
         with:
           node-version: 22
           registry-url: https://registry.npmjs.org
+      # Trusted Publishing needs npm 11.5.1 or later.
+      - run: npm install -g npm@latest
       - run: npm ci
       - run: npm run build
       - run: npm run check
       - name: Publish
         run: npm publish --workspace "${{ inputs.package }}" --access public --provenance
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
       - name: Tag the release
         run: |
           version=$(node -p "require('./${{ inputs.package }}/package.json').version")

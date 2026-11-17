@@ -33,7 +33,12 @@ Open an issue with the form for that package; it is labelled for that package au
 
 Raise the version in the package's `package.json`, then on GitHub: Actions → release → Run
 workflow → pick the package. It builds, checks, publishes to npm and tags the commit
-`<package>@<version>`.
+`<package>@<version>`, signing in with npm Trusted Publishing, so no token is stored anywhere.
+
+A new package's first version has to be published once by hand (`npm login`, then
+`npm publish --workspace <package> --access public`), because npm only lets a trusted publisher be
+set on a package that exists. Then on npmjs.com, in the package's Settings → Trusted publisher, add
+GitHub Actions with owner `JuanSync7`, repository `frontend-kit` and workflow `release.yml`.
 
 ## Working on it
 
