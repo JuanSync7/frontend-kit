@@ -14,6 +14,7 @@ on:
         options:
           - iso-lettering
           - blueprint
+          - bricks
 jobs:
   publish:
     runs-on: ubuntu-latest
