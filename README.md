@@ -29,6 +29,12 @@ through its published name, never by reaching into the folder next door.
 
 Open an issue with the form for that package; it is labelled for that package automatically.
 
+## Releasing
+
+Raise the version in the package's `package.json`, then on GitHub: Actions → release → Run
+workflow → pick the package. It builds, checks, publishes to npm and tags the commit
+`<package>@<version>`.
+
 ## Working on it
 
 ```sh
