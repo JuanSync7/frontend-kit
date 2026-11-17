@@ -1,0 +1,20 @@
+name: Bricks
+description: A problem or a request for @juansync7/bricks
+labels: ["bricks"]
+body:
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened, or what you need
+      description: For a piece that looks wrong or a model the checks get wrong, attach a screenshot or the shapes.
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Package version
+      placeholder: "1.0.0"
+  - type: textarea
+    id: steps
+    attributes:
+      label: How to see it
