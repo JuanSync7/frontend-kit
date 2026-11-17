@@ -28,6 +28,7 @@ export { clashes } from './legoclash.ts';
 export { inspect, mustHold } from './legocheck.ts';
 export type { Report } from './legocheck.ts';
 export { flap, flapTiles } from './legoaero.ts';
+export type { Next } from './legoaero.ts';
 export { body, GAP, STUD_H, STUD_R } from './legomesh.ts';
 export type { BodyOpts, Part } from './legomesh.ts';
 export { finishedAt, liftAt, loopOf } from './legoplay.ts';
