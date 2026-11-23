@@ -1,0 +1,17 @@
+/* Colours: one with light-dark(), one with a dark-theme block, one alias. */
+:root {
+  --ds-ground: light-dark(#fbf7ee, #1d2126);
+  --ds-ink: #1d2126;
+  --ds-ink-muted: light-dark(#5d5548, #a8aeb6);
+  --ds-signal: #d4561c;
+  --ds-rule: rgba(29, 33, 38, 0.2);
+  --ds-link: var(--ds-signal);
+}
+:root[data-theme='dark'] {
+  --ds-ink: #eef0f2;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) {
+    --ds-ink: #eef0f2;
+  }
+}

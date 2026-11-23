@@ -3,7 +3,7 @@
   "private": true,
   "description": "Juan Kok's frontend kit: small, standalone pieces from juansync.dev, each its own npm package",
   "license": "SEE LICENSE IN EACH PACKAGE",
-  "workspaces": ["iso-lettering", "blueprint", "bricks"],
+  "workspaces": ["iso-lettering", "blueprint", "bricks", "design-tokens"],
   "scripts": {
     "build": "npm run build --workspaces",
     "check": "npm run check --workspaces"

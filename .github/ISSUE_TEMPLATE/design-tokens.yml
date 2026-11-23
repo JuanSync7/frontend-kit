@@ -1,0 +1,20 @@
+name: Design tokens
+description: A problem or a request for @juansync7/design-tokens
+labels: ["design-tokens"]
+body:
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened, or what you need
+      description: For a token or a pair, paste the CSS line and the output.
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Package version
+      placeholder: "1.0.0"
+  - type: textarea
+    id: steps
+    attributes:
+      label: How to see it

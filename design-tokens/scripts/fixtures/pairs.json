@@ -1,0 +1,11 @@
+[
+  {
+    "title": "Fixture",
+    "pairs": [
+      { "role": "Body text", "fg": "--ds-ink", "ground": "--ds-ground", "need": "text" },
+      { "role": "Comments", "fg": "--ds-ink-muted", "ground": "--ds-ground", "need": "text" },
+      { "role": "Links", "fg": "--ds-link", "ground": "--ds-ground", "need": "large" },
+      { "role": "Rules", "fg": "--ds-rule", "ground": "--ds-ground", "need": "decorative", "note": "a hairline, never read" }
+    ]
+  }
+]
