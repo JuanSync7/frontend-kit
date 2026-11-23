@@ -8,6 +8,7 @@ its own licence. Install only the one you need.
 | [`@juansync7/iso-lettering`](iso-lettering) | ISO 3098 type B engineering lettering: an OpenType font, and the characters as pen strokes | SIL OFL 1.1 | 1.0.0 |
 | [`@juansync7/blueprint`](blueprint) | Blueprints for components and pages: every part named, every size bound to its design token, measured and drawn | MIT | 0.1.0 |
 | [`@juansync7/bricks`](bricks) | A catalogue of real LEGO parts drawn from our own geometry, models swapped into them, and checks that the result could be built | MIT | 0.1.0 |
+| [`@juansync7/design-tokens`](design-tokens) | Design tokens kept in CSS, exported as W3C Design Tokens with light and dark themes, every colour pair checked against WCAG 2.2 in both | MIT | 0.1.0 |
 
 Coming when each runs outside the site: stickers (CC BY 4.0) and isometric shapes. LEGO is a
 trademark of the LEGO Group, which does not sponsor or endorse this kit.
